@@ -19,7 +19,7 @@ function Header() {
 
     return (
         <Container changeBackground={changeBackground}>
-             <img src={Logo} alt="logo-dev-movies"/>
+             <img src={Logo} alt="logo-dev-movies" />
             <Menu>
                 <Li isActive={pathname === '/'}>
                     <Link to="/">Home</Link>
