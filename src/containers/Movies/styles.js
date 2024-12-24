@@ -10,6 +10,19 @@ const scale = keyframes`
    }
 `
 
+const slideInBckTop = keyframes`
+  0% {
+    -webkit-transform: translateZ(700px) translateY(-300px);
+    transform: translateZ(700px) translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+`;
+
 export const Background = styled.div`
   background-image: url( ${(props) => props.img} );
   
@@ -48,4 +61,44 @@ export const Container = styled.div`
   height: 100%;
   max-width: 1500px;
    
+`
+export const Info = styled.div`
+  z-index: 2;
+  padding: 20px;
+  width: 60%;
+  margin-top: 200px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    animation: ${slideInBckTop} 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  p {
+    font: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+`
+export const Poster = styled.div`
+  z-index: 2;
+  
+
+  img {
+    width: 280px;
+    border-radius: 30px;
+    margin-top: 100px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    animation: ${scale} 0.5s linear;
+   
+  }
+`
+
+export const ContainerButtons = styled.div`
+   display: flex;
+   gap: 20px;
+   margin-top: 2px;
 `
