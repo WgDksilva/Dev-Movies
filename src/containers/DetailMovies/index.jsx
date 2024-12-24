@@ -4,18 +4,29 @@ import { useParams } from 'react-router-dom'
 import Credits from "../../components/Credits"
 import Slider from "../../components/Slider"
 import SpanGenres from "../../components/SpanGenres"
-import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideos } from "../../services/getData"
+import {
+    getMovieById,
+    getMovieCredits,
+    getMovieSimilar,
+    getMovieVideos
+} from "../../services/getData"
 import { getImages } from "../../utils/getimages"
-import { Container, Background, Cover, Info, ContainerMovies } from "./styles"
+import {
+    Background,
+    Container,
+    ContainerMovies,
+    Cover,
+    Info,
+} from "./styles"
 
 
-
-function Detail() {
-    const { id } = useParams()
+export default function DetailMovies() {
     const [movie, setMovie] = useState()
     const [movieVideos, setMovieVideos] = useState()
     const [movieCredits, setMovieCredits] = useState()
     const [movieSimilar, setMovieSimilar] = useState()
+
+    const { id } = useParams()
 
 
     useEffect(() => {
@@ -26,17 +37,24 @@ function Detail() {
                 getMovieCredits(id),
                 getMovieSimilar(id),
             ])
-                .then(([movie, videos, crdits, similar]) => {
+                .then(([
+                    movie,
+                    videos,
+                    crdits,
+                    similar
+                ]) => {
                     setMovie(movie)
                     setMovieVideos(videos)
                     setMovieCredits(crdits)
                     setMovieSimilar(similar)
                 })
-                .catch((error) => console.error(error))
+                .catch((err) => console.error(err));
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         getAllData()
-    }, [])
+    }, [id]);
 
     return (
         <>
@@ -51,9 +69,7 @@ function Detail() {
                             <h2>{movie.title}</h2>
                             <SpanGenres genres={movie.genres} />
                             <p>{movie.overview}</p>
-                            <div>
-                                <Credits credits={movieCredits} />
-                            </div>
+                            <Credits credits={movieCredits} />
                         </Info>
                     </Container>
                     <ContainerMovies>
@@ -64,16 +80,15 @@ function Detail() {
                                     src={`https://www.youtube.com/embed/${video.key}`}
                                     title='Youtube Video Player'
                                     height="500px"
-                                    width="100%"
+                                    width="80%"
                                 ></iframe>
                             </div>
                         ))}
                     </ContainerMovies>
-                    {movieSimilar && <Slider info={movieSimilar} title={'Filmes Similares'} />}
+                    {movieSimilar && <Slider info={movieSimilar} title={'Filmes Similares'}  route={`/detalhe-filme/`} />}
                 </>
             )}
         </>
     )
 }
 
-export default Detail

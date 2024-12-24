@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Container } from "./styles"
 import Card from '../Card'
+import { Container } from "./styles"
 
-
-function Slider({ info, title }) {
+export default function Slider({ info, title, route }) {
     return (
         <Container>
             <h2>{title}</h2>
@@ -16,7 +15,7 @@ function Slider({ info, title }) {
             >
                 {info.map((item, index) => (
                     <SwiperSlide key={index}>
-                      <Card item={item} />
+                        <Card item={item} route={route} />
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -24,4 +23,3 @@ function Slider({ info, title }) {
     )
 }
 
-export default Slider

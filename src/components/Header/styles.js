@@ -2,8 +2,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+ z-index: 4;
  min-height: 100px;
- z-index: 99;
  position: fixed;
  top: 0;
  display: flex;
@@ -11,6 +11,7 @@ export const Container = styled.div`
  align-items: center;
  padding: 10px 50px;
  background-color: ${props => props.changeBackground ? '#000' : 'transparent'};
+ border-bottom: ${(props) => props.changeBackground ? '4px dashed #189b20' : 'none'};
  transition: background-color 0.6s ease-in-out;
 
  img {
@@ -45,10 +46,12 @@ export const Li = styled.li`
  left: 50%;
  transform: translateX(-50%);
  transition: width 0.5s ease-in-out;
+ border: ${(props) => (props.isActive ? '1px dotted #5036ac' : 'none')};
  }
 
  &:hover::after {
     width: 100%;
+    border: 1px dotted #5036ac;
  }
 `
 

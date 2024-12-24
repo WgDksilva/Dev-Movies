@@ -1,41 +1,81 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import api from '../../services/api';
-import { Background, Container, ContainerButtons, Info, Poster } from './styles';
 import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import Slider from '../../components/Slider';
+import {
+    getMovies,
+    getMoviesUpcoming,
+    getNowPlayingMovies,
+    getTopMovies
+} from '../../services/getData';
+import { getImages } from '../../utils/getimages';
+import {
+    Background,
+    Container,
+    ContainerButtons,
+    Info,
+    Poster
+} from './styles';
 
 
 function Movies() {
-    const [movie, setMovie] = useState()
+    const [showModal, setShowModal] = useState(false);
+    const [movie, setMovie] = useState();
+    const [recentMovies, setRecentMovies] = useState();
+    const [moviesUpcoming, setMoviesUpcoming] = useState();
+    const [topMovies, setTopMovies] = useState();
 
+    const navigate = useNavigate();
 
     useEffect(() => {
-        async function getNewMovies() {
-            const {
-                data: { results }
-            } = await api.get('/movie/popular')
-
-
-            setMovie(results[1])
+        async function getAllData() {
+            Promise.all([
+                getMovies(),
+                getNowPlayingMovies(),
+                getMoviesUpcoming(),
+                getTopMovies()
+            ])
+                .then(([movie, recentMovies, moviesUpcoming, topMovies]) => {
+                    setMovie(movie);
+                    setRecentMovies(recentMovies);
+                    setMoviesUpcoming(moviesUpcoming);
+                    setTopMovies(topMovies);
+                })
+                .catch((err) => console.error(err));
         }
 
-        getNewMovies()
-    }, [])
+        getAllData();
+    }, []);
+
+    const limitText = (text) => {
+        return text.slice(0, 400) + '...';
+    };
 
 
     return (
         <>
             {movie && (
-                <Background
-                    img={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}>
-
+                <Background img={`${getImages(movie.backdrop_path)}`}>
+                    {showModal && (
+                        <Modal movieId={movie.id} setShowModal={setShowModal} />
+                    )}
                     <Container>
                         <Info>
                             <h1>{movie.title}</h1>
-                            <p>{movie.overview}</p>
+                            <p>
+                                {movie.overview.length > 500
+                                    ? limitText(movie.overview)
+                                    : movie.overview}
+                            </p>
                             <ContainerButtons>
-                                <Button red={true}>Assista Agora</Button>
-                                <Button red={false}>Assista o Trailer</Button>
+                                <Button red onClick={() => navigate(`/detalhe-filme/${movie.id}`)}>
+                                    Assista Agora
+                                </Button>
+                                <Button onClick={() => setShowModal(true)}>
+                                    Assista o Trailer
+                                </Button>
                             </ContainerButtons>
                         </Info>
                         <Poster>
@@ -44,6 +84,9 @@ function Movies() {
                     </Container>
                 </Background>
             )}
+            {recentMovies && (<Slider info={recentMovies} title={'Filmes Rolando agora 🔥'} route={`/detalhe-filme/`} />)}
+            {moviesUpcoming && (<Slider info={moviesUpcoming} title={'Filmes que estão por vir'} route={`/detalhe-filme/`} />)}
+            {topMovies && (<Slider info={topMovies} title={'Top Filmes'} route={`/detalhe-filme/`} />)}
         </>
     )
 }

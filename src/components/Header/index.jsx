@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import Logo from '../../assets/logo.png'
 import { Container, Menu, Li } from './styles'
-import { useState } from 'react'
+
 
 function Header() {
     const [changeBackground, setChangeBackground] = useState(false)

@@ -1,4 +1,3 @@
-
 import styled, { keyframes } from 'styled-components'
 
 const scale = keyframes`
@@ -8,7 +7,20 @@ const scale = keyframes`
    to {
         transform: scale(1);
    }
-`
+`;
+
+const slideInBckTop = keyframes`
+  0% {
+    -webkit-transform: translateZ(700px) translateY(-300px);
+    transform: translateZ(700px) translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+`;
 
 export const Background = styled.div`
  background-image: url(${(props) => props.image});
@@ -53,7 +65,7 @@ export const Cover = styled.div`
  display: flex;
  align-items: flex-start;
  height: 100%;
- z-index: 99;
+ z-index: 2;
 
     img {
         width: 256px;
@@ -76,12 +88,18 @@ export const Info = styled.div`
         font-size: 3rem;
         font-weight: 600;
         color: #ffffff;
+        animation: ${scale} 0.6s ease-in;
+
     }
 
     p {
         font-weight: 500;
         color: #ffffff;
         margin-top: 10px;
+
+        -webkit-animation: ${slideInBckTop} 1.6s
+        cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: ${slideInBckTop} 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     }
 `
 
