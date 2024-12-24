@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+/*import BackButton from '../../components/BackButton';*/
 import Credits from '../../components/Credits';
 import Slider from '../../components/Slider';
 import SpanGenres from '../../components/SpanGenres';

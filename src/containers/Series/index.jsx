@@ -82,7 +82,7 @@ function Series() {
                         </Info>
 
                         <Poster>
-                            <img alt="capa-do-filme" src={getImages(series.poster_path)} />
+                            <img src={`https://image.tmdb.org/t/p/original${series.poster_path}`} alt="capa-da-serie" />
                         </Poster>
                     </Container>
                 </Background>

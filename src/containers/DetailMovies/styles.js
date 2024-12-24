@@ -77,10 +77,10 @@ export const Cover = styled.div`
 `
 
 export const Info = styled.div`
- padding: 2px;
+ padding: 20px;
  width: 60%;
  margin-left: 20px;
- z-index: 99;
+ z-index: 2;
  display: flex;
  align-items: flex-start;
  flex-direction: column;
