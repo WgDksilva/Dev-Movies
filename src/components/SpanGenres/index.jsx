@@ -1,4 +1,4 @@
-import { Container } from "./styles"
+import { Container } from "./styles";
 
 export default function SpanGenres({ genres }) {
 
@@ -7,5 +7,5 @@ export default function SpanGenres({ genres }) {
             {genres &&
                 genres.map((genre) => <span key={genre.id}>{genre.name}</span>)}
         </Container>
-    )
-}
+    );
+};

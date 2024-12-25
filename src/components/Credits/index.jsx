@@ -1,5 +1,5 @@
-import { getImages } from "../../utils/getimages"
-import { Title, Container } from "./styles"
+import { getImages } from "../../utils/getimages";
+import { Title, Container } from "./styles";
 
 export default function Credits({ credits }) {
     return (
@@ -17,6 +17,6 @@ export default function Credits({ credits }) {
                 </Container>
             )}
         </>
-    )
-}
+    );
+};
 

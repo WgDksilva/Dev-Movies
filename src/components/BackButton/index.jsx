@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Arrow } from './styles';
 
-import Seta from '../../assets/seta.png'
+import Seta from '../../assets/seta.png';
 
 const BackButton = () => {
   const navigate = useNavigate();

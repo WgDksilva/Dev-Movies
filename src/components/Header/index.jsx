@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-import Logo from '../../assets/logo.png'
-import { Container, Menu, Li } from './styles'
+import Logo from '../../assets/logo.png';
+import { Container, Menu, Li } from './styles';
 
 
 function Header() {
@@ -33,7 +33,7 @@ function Header() {
                 </Li>
             </Menu>
         </Container>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

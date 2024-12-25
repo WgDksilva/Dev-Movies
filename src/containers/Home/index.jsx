@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import Button from '../../components/Button'
-import Modal from '../../components/Modal'
-import Slider from '../../components/Slider'
+import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import Slider from '../../components/Slider';
 import {
     getAiringTodaySeries,
     getMovies,
@@ -12,28 +12,28 @@ import {
     getTopMovies,
     getTopPeople,
     getTopSeries
-} from '../../services/getData'
-import { getImages } from '../../utils/getimages'
+} from '../../services/getData';
+import { getImages } from '../../utils/getimages';
 import {
     Background,
     Container,
     ContainerButtons,
     Info,
     Poster
-} from './styles'
+} from './styles';
 
 
 function Home() {
-    const [showModal, setShowModal] = useState(false)
-    const [movie, setMovie] = useState()
+    const [showModal, setShowModal] = useState(false);
+    const [movie, setMovie] = useState();
     const [recentMovies, setRecentMovies] = useState();
-    const [topMovies, setTopMovies] = useState()
+    const [topMovies, setTopMovies] = useState();
     const [airingTodaySeries, setAiringTodaySeries] = useState();
-    const [topSeries, setTopSeries] = useState()
-    const [popularSeries, setPopularSeries] = useState()
-    const [topPeople, setTopPeople] = useState()
+    const [topSeries, setTopSeries] = useState();
+    const [popularSeries, setPopularSeries] = useState();
+    const [topPeople, setTopPeople] = useState();
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getAllData() {
@@ -55,19 +55,19 @@ function Home() {
                     popularSeries,
                     topPeople
                 ]) => {
-                    setMovie(movie)
+                    setMovie(movie);
                     setRecentMovies(recentMovies);
-                    setTopMovies(topMovies)
+                    setTopMovies(topMovies);
                     setAiringTodaySeries(airingTodaySeries);
-                    setTopSeries(topSeries)
-                    setPopularSeries(popularSeries)
-                    setTopPeople(topPeople)
+                    setTopSeries(topSeries);
+                    setPopularSeries(popularSeries);
+                    setTopPeople(topPeople);
                 })
                 .catch((err) => console.error(err));
         }
 
-        getAllData()
-    }, [])
+        getAllData();
+    }, []);
 
 
     return (
@@ -106,6 +106,6 @@ function Home() {
             {topPeople && (<Slider info={topPeople} title={'Top Artistas'} route={false} />)}
         </>
     )
-}
+};
 
-export default Home
+export default Home;

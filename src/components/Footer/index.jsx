@@ -11,12 +11,12 @@ export default function Footer() {
       <Container>
         <p>Desenvolvido por &copy; Vagner Silva</p>
         <Nav>
-          <Link to="https://www.linkedin.com/in/wgdksilva/"><img src={Linkedin}/></Link>
+          <Link to="https://www.linkedin.com/in/wgdksilva/"><img src={Linkedin} /></Link>
         </Nav>
         <Nav>
-          <Link to="https://github.com/WgDksilva"><img src={Github}/></Link>
+          <Link to="https://github.com/WgDksilva"><img src={Github} /></Link>
         </Nav>
       </Container>
     </>
   );
-}
+};

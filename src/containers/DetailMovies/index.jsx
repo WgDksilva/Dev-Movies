@@ -1,33 +1,33 @@
-import { useEffect, useState } from "react"
-import { useParams } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 
 import BackButton from '../../components/BackButton';
-import Credits from "../../components/Credits"
-import Slider from "../../components/Slider"
-import SpanGenres from "../../components/SpanGenres"
+import Credits from "../../components/Credits";
+import Slider from "../../components/Slider";
+import SpanGenres from "../../components/SpanGenres";
 import {
     getMovieById,
     getMovieCredits,
     getMovieSimilar,
     getMovieVideos
-} from "../../services/getData"
-import { getImages } from "../../utils/getimages"
+} from "../../services/getData";
+import { getImages } from "../../utils/getimages";
 import {
     Background,
     Container,
     ContainerMovies,
     Cover,
     Info,
-} from "./styles"
+} from "./styles";
 
 
 export default function DetailMovies() {
-    const [movie, setMovie] = useState()
-    const [movieVideos, setMovieVideos] = useState()
-    const [movieCredits, setMovieCredits] = useState()
-    const [movieSimilar, setMovieSimilar] = useState()
+    const [movie, setMovie] = useState();
+    const [movieVideos, setMovieVideos] = useState();
+    const [movieCredits, setMovieCredits] = useState();
+    const [movieSimilar, setMovieSimilar] = useState();
 
-    const { id } = useParams()
+    const { id } = useParams();
 
 
     useEffect(() => {
@@ -44,17 +44,17 @@ export default function DetailMovies() {
                     crdits,
                     similar
                 ]) => {
-                    setMovie(movie)
-                    setMovieVideos(videos)
-                    setMovieCredits(crdits)
-                    setMovieSimilar(similar)
+                    setMovie(movie);
+                    setMovieVideos(videos);
+                    setMovieCredits(crdits);
+                    setMovieSimilar(similar);
                 })
                 .catch((err) => console.error(err));
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        getAllData()
+        getAllData();
     }, [id]);
 
     return (
@@ -91,6 +91,6 @@ export default function DetailMovies() {
                 </>
             )}
         </>
-    )
-}
+    );
+};
 

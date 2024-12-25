@@ -1,25 +1,31 @@
 
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 const buttonStyles = css`
- border: 3px solid #ffffff;
-   background: transparent;
-   color: #ffffff;
-   border-radius: 30px;
-   padding: 10px 20px;
-   cursor: pointer;
-   font-size: 20px;
-   font-weight: 500;
+    border: 3px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
 
-   &:hover {
+  &:hover {
     color: #ff0000;
     background: #ffffff;
-   }
-`
+  }
+
+  @media (max-width: 430px) {
+    font-size: 16px;
+    padding-bottom: 8px;
+    padding: 10px 10px;
+  }
+`;
 
 export const ButtonWhite = styled.button`
   ${buttonStyles}
-`
+`;
 
 export const ButtonRed = styled.button`
   ${buttonStyles}
@@ -33,4 +39,4 @@ export const ButtonRed = styled.button`
     background: #ff0000;
     color: #ffffff;
   }
-`
+`;

@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
 
 import DetailMovies from '../containers/DetailMovies';
 import DetailSeries from '../containers/DetailSeries';
-import Home from '../containers/Home'
-import Movies from '../containers/Movies'
-import Series from '../containers/Series'
-import DefaultLayout from '../layout/DefaultLayout'
+import Home from '../containers/Home';
+import Movies from '../containers/Movies';
+import Series from '../containers/Series';
+import DefaultLayout from '../layout/DefaultLayout';
 
 
 function Router() {
@@ -20,5 +20,6 @@ function Router() {
             </Route>
         </Routes>
     )
-}
-export default Router
+};
+
+export default Router;

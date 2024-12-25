@@ -94,7 +94,7 @@ function Movies() {
             {topMovies && (<Slider info={topMovies} title={'Top Filmes'} route={`/detalhe-filme/`} />)}
         </>
     )
-}
+};
 
-export default Movies
+export default Movies;
 

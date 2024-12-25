@@ -1,5 +1,5 @@
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Background = styled.div`
   height: 100vh;
@@ -10,7 +10,7 @@ export const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const Container = styled.div`
   background: #000;
@@ -23,10 +23,15 @@ export const Container = styled.div`
   position: fixed;
   padding: 50px;
  
-
   iframe {
     border: none;
     max-height: 500px;
+
+    @media (max-width: 430px) {
+      width: 100%;
+      height: 300px;
+    }
+
   }
 
   span {
@@ -43,5 +48,14 @@ export const Container = styled.div`
       text-decoration: none;
       cursor: pointer;
     }
+
+    @media (max-width: 430px) {
+      bottom: 88%;
+    }
+  }
+
+  @media (max-width: 430px) {
+    width: 85%;
+    padding: 1px;
   }
 `;

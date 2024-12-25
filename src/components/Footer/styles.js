@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 60px;
+  height: 70px;
   background: #5036ac;
-  margin-top: 72px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -16,7 +16,23 @@ export const Container = styled.div`
     font-size: 20px;
     color: #fff;
     text-decoration: none;
+
+    @media (max-width: 430px) {
+      font-size: 18px;
+      height: 50px;
+      justify-content: center;
+      flex-direction: column;
+      
+   }
   }
+
+  @media (max-width: 430px) {
+      width: auto;
+      height: 110px;
+      padding: 16px 10px;
+      justify-content: center;
+      flex-direction: column;
+   }
 `;
 
 export const Nav = styled.nav`
@@ -37,8 +53,6 @@ export const Nav = styled.nav`
       background: #fff;
     }
   }
-
-  
 `;
 
 

@@ -1,5 +1,5 @@
 
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
 const slideIn = keyframes`
    from {
@@ -20,14 +20,18 @@ const scale = keyframes`
    to {
         transform: scale(1);
    }
-`
+`;
 
 export const Title = styled.h4`
  color: #ffffff;
  font-size: 25px;
  font-weight: 700;
  animation: ${scale} 0.6s ease-in;
-`
+
+ @media (max-width: 430px) {
+    margin: 0 auto;
+  }
+`;
 
 export const Container = styled.div`
  display: flex;
@@ -51,5 +55,9 @@ export const Container = styled.div`
     animation: ${scale} 0.5s linear;
   }
 
-`
+  @media (max-width: 430px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
 

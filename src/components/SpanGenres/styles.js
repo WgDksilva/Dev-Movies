@@ -29,4 +29,7 @@ export const Container = styled.div`
     justify-content: center;
   }
 
+  @media (max-width: 430px) {
+    flex-wrap: wrap;
+  }
 `;

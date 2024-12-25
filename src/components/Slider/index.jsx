@@ -1,7 +1,7 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import Card from '../Card'
-import { Container } from "./styles"
+import Card from '../Card';
+import { Container } from "./styles";
 
 export default function Slider({ info, title, route }) {
     return (
@@ -20,6 +20,6 @@ export default function Slider({ info, title, route }) {
                 ))}
             </Swiper>
         </Container>
-    )
-}
+    );
+};
 

@@ -1,25 +1,25 @@
 
 
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import Button from '../../components/Button'
-import Modal from '../../components/Modal'
-import Slider from '../../components/Slider'
+import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import Slider from '../../components/Slider';
 import {
     getAiringTodaySeries,
     getPopularSeries,
     getSeries,
     getTopSeries
-} from '../../services/getData'
-import { getImages } from '../../utils/getimages'
+} from '../../services/getData';
+import { getImages } from '../../utils/getimages';
 import {
     Background,
     Container,
     ContainerButtons,
     Info,
     Poster
-} from './styles'
+} from './styles';
 
 
 function Series() {
@@ -51,10 +51,10 @@ function Series() {
                     setPopularSeries(popularSeries);
                 })
                 .catch((err) => console.error(err));
-        }
+            }
 
         getAllData()
-    }, [])
+    }, []);
 
     const limitText = (text) => {
         return text.slice(0, 400) + '...';
@@ -98,6 +98,6 @@ function Series() {
             {popularSeries && (<Slider info={popularSeries} title={'Series Populares'} route={`/detalhe-serie/`} />)}
         </>
     )
-}
+};
 
-export default Series
+export default Series;

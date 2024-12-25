@@ -1,4 +1,4 @@
-import { ButtonRed, ButtonWhite } from "./styles"
+import { ButtonRed, ButtonWhite } from "./styles";
 
 function Button({ children, red, ...rest }) {
 
@@ -10,7 +10,7 @@ function Button({ children, red, ...rest }) {
             <ButtonWhite {...rest}>{children}</ButtonWhite>
         )}
         </>
-    )
-}
+    );
+};
 
-export default Button
+export default Button;

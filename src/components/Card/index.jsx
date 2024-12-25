@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
-import { getImages } from "../../utils/getimages"
-import { Container } from "./styles"
+import { getImages } from "../../utils/getimages";
+import { Container } from "./styles";
 
 export default function Card({ item, route }) {
   const navigate = useNavigate();
@@ -12,6 +12,6 @@ export default function Card({ item, route }) {
 
            <h3>{item.original_title || item.name || ''}</h3>
     </Container>
-  )
-}
+  );
+};
 

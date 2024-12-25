@@ -10,7 +10,7 @@ export async function getMovies() {
   } catch (error) {
     console.error('Rota: "movie/popular" - Erro ao buscar os filmes: ', error);
   }
-}
+};
 
 export async function getNowPlayingMovies() {
   try {
@@ -22,7 +22,7 @@ export async function getNowPlayingMovies() {
   } catch (error) {
     console.error('Rota: "movie/now_playing" - Erro ao buscar filmes: ', error);
   }
-}
+};
 
 export async function getTopMovies() {
   try {
@@ -37,7 +37,7 @@ export async function getTopMovies() {
       error
     );
   }
-}
+};
 
 export async function getMoviesUpcoming() {
   try {
@@ -52,7 +52,7 @@ export async function getMoviesUpcoming() {
       error
     );
   }
-}
+};
 
 export async function getAiringTodaySeries() {
   try {
@@ -64,7 +64,7 @@ export async function getAiringTodaySeries() {
   } catch (error) {
     console.error('Rota: "/tv/airing_today" - Erro ao buscar séries: ', error);
   }
-}
+};
 
 export async function getTopSeries() {
   try {
@@ -79,7 +79,7 @@ export async function getTopSeries() {
       error
     );
   }
-}
+};
 
 export async function getPopularSeries() {
   try {
@@ -94,7 +94,7 @@ export async function getPopularSeries() {
       error
     );
   }
-}
+};
 
 export async function getSeries() {
   try {
@@ -109,7 +109,7 @@ export async function getSeries() {
       error
     );
   }
-}
+};
 
 export async function getTopPeople() {
   try {
@@ -124,7 +124,7 @@ export async function getTopPeople() {
       error
     );
   }
-}
+};
 
 export async function getMovieVideos(movieId) {
   try {
@@ -139,7 +139,7 @@ export async function getMovieVideos(movieId) {
       error
     );
   }
-}
+};
 
 export async function getMovieCredits(movieId) {
   try {
@@ -151,7 +151,7 @@ export async function getMovieCredits(movieId) {
   } catch (error) {
     console.error('Rota: "movie/:Id/credits" - Erro ao buscar elenco: ', error);
   }
-}
+};
 
 export async function getMovieSimilar(movieId) {
   try {
@@ -166,7 +166,7 @@ export async function getMovieSimilar(movieId) {
       error
     );
   }
-}
+};
 
 export async function getMovieById(movieId) {
   try {
@@ -176,7 +176,7 @@ export async function getMovieById(movieId) {
   } catch (error) {
     console.error('Rota: "movie/:Id" - Erro ao buscar filme: ', error);
   }
-}
+};
 
 export async function getSeriesById(serieId) {
   try {
@@ -186,7 +186,7 @@ export async function getSeriesById(serieId) {
   } catch (error) {
     console.error('Rota: "tv/:Id" - Erro ao buscar serie: ', error);
   }
-}
+};
 
 export async function getSerieVideos(serieId) {
   try {
@@ -201,7 +201,7 @@ export async function getSerieVideos(serieId) {
       error
     );
   }
-}
+};
 
 export async function getSerieCredits(serieId) {
   try {
@@ -213,7 +213,7 @@ export async function getSerieCredits(serieId) {
   } catch (error) {
     console.error('Rota: "tv/:Id/credits" - Erro ao buscar elenco: ', error);
   }
-}
+};
 
 export async function getSerieSimilar(serieId) {
   try {
@@ -228,4 +228,4 @@ export async function getSerieSimilar(serieId) {
       error
     );
   }
-}
+};

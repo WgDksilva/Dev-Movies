@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
 const scale = keyframes`
    from {
@@ -49,7 +49,7 @@ export const Background = styled.div`
         height: 120px;
         background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     }
-`
+`;
 
 export const Container = styled.div`
  display: flex;
@@ -58,7 +58,7 @@ export const Container = styled.div`
  height: 100%;
  max-width: 1500px;
  margin-top: -100px;
-`
+`;
 
 export const Cover = styled.div`
  pad: 20px;
@@ -73,7 +73,11 @@ export const Cover = styled.div`
         box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
         animation: ${scale} 0.5s linear;
     }
-`
+
+    @media (max-width: 430px) {
+        display: none;
+    }
+`;
 
 export const Info = styled.div`
  padding: 20px;
@@ -90,6 +94,10 @@ export const Info = styled.div`
         color: #ffffff;
         animation: ${scale} 0.6s ease-in;
 
+        @media (max-width: 430px) {
+            text-align: center;
+            font-size: 40px;
+        }
     }
 
     p {
@@ -100,8 +108,17 @@ export const Info = styled.div`
         -webkit-animation: ${slideInBckTop} 1.6s
         cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         animation: ${slideInBckTop} 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+        @media (max-width: 430px) {
+            text-align: justify;
+        }
     }
-`
+
+    @media (max-width: 430px) {
+        justify-content: center;
+        width: 100%;
+    }
+`;
 
 export const ContainerMovies = styled.div`
  display: flex;
@@ -118,6 +135,10 @@ export const ContainerMovies = styled.div`
         width: 100%;
         height: 100%;
         margin: 20px 0;
+
+        @media (max-width: 430px) {
+            justify-content: center;
+        }
     }
 
     h4 {
@@ -130,5 +151,9 @@ export const ContainerMovies = styled.div`
     iframe {
         border: none;
 
+        @media (max-width: 430px) {
+            width: 100%;
+            height: 280px;
+        }
     }
-`
+`;
