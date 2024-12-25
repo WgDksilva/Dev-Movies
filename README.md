@@ -136,5 +136,5 @@ $ pnpm dev
 
 ```
 
-Abra [http://localhost:5173]( http://localhost:5174/) no seu navegador e veja o projeto rodando.
+Abra [http://localhost:5174]( http://localhost:5174/) no seu navegador e veja o projeto rodando.
 
