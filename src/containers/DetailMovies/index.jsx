@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 
+import BackButton from '../../components/BackButton';
 import Credits from "../../components/Credits"
 import Slider from "../../components/Slider"
 import SpanGenres from "../../components/SpanGenres"
@@ -58,6 +59,7 @@ export default function DetailMovies() {
 
     return (
         <>
+            <BackButton />
             {movie && (
                 <>
                     <Background image={getImages(movie.backdrop_path)} />
@@ -85,7 +87,7 @@ export default function DetailMovies() {
                             </div>
                         ))}
                     </ContainerMovies>
-                    {movieSimilar && <Slider info={movieSimilar} title={'Filmes Similares'}  route={`/detalhe-filme/`} />}
+                    {movieSimilar && <Slider info={movieSimilar} title={'Filmes Similares'} route={`/detalhe-filme/`} />}
                 </>
             )}
         </>

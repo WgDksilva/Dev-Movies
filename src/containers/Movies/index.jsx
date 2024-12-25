@@ -37,7 +37,12 @@ function Movies() {
                 getMoviesUpcoming(),
                 getTopMovies()
             ])
-                .then(([movie, recentMovies, moviesUpcoming, topMovies]) => {
+                .then(([
+                    movie, 
+                    recentMovies, 
+                    moviesUpcoming, 
+                    topMovies
+                ]) => {
                     setMovie(movie);
                     setRecentMovies(recentMovies);
                     setMoviesUpcoming(moviesUpcoming);
@@ -79,7 +84,7 @@ function Movies() {
                             </ContainerButtons>
                         </Info>
                         <Poster>
-                            <img alt='poster-filme' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
+                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='poster-filme' />
                         </Poster>
                     </Container>
                 </Background>

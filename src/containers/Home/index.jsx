@@ -32,6 +32,7 @@ function Home() {
     const [topSeries, setTopSeries] = useState()
     const [popularSeries, setPopularSeries] = useState()
     const [topPeople, setTopPeople] = useState()
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -83,14 +84,16 @@ function Home() {
 
                             <ContainerButtons>
                                 <Button red onClick={() => navigate(`/detalhe-filme/${movie.id}`)}>
-                                    Assista Agora</Button>
+                                    Assista Agora
+                                </Button>
                                 <Button onClick={() => setShowModal(true)}>
-                                    Assista o Trailer</Button>
+                                    Assista o Trailer
+                                </Button>
                             </ContainerButtons>
                         </Info>
 
                         <Poster>
-                            <img alt="capa-do-filme" src={getImages(movie.poster_path)} />
+                            <img  src={getImages(movie.poster_path)} alt="capa-do-filme" />
                         </Poster>
                     </Container>
                 </Background>

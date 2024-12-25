@@ -7,12 +7,17 @@ export const Arrow = styled.div`
   top: 120px;
   left: 20px;
   cursor: pointer;
-  z-index: 999;
-`;
+  z-index: 2;
 
-export const ArrowLeft = styled.div`
-  width: 24px;
-  height: 24px;
-  color: #fff;
-  border: 2px dashed #5036ac;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #5036ac;
+    padding: 10px;
+   
+    &:hover {
+      background: #fff;
+    }
+  }
 `;

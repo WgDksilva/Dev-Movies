@@ -83,6 +83,13 @@ export const Info = styled.div`
     margin-bottom: 20px;
   }
 `
+
+export const ContainerButtons = styled.div`
+   display: flex;
+   gap: 20px;
+   margin-top: 2px;
+`
+
 export const Poster = styled.div`
   z-index: 2;
   
@@ -97,8 +104,3 @@ export const Poster = styled.div`
   }
 `
 
-export const ContainerButtons = styled.div`
-   display: flex;
-   gap: 20px;
-   margin-top: 2px;
-`

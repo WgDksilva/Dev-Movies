@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import DetailMovies from '../containers/DetailMovies';
 import DetailSeries from '../containers/DetailSeries';

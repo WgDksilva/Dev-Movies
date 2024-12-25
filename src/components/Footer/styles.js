@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 
   p {
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
     text-decoration: none;
   }
@@ -23,7 +23,25 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   margin-top: 3px;
+  margin-left: 10px;
+
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #5036ac;
+
+   
+    &:hover {
+      background: #fff;
+    }
+  }
+
+  
 `;
+
+
 
 
 

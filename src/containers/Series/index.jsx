@@ -8,8 +8,8 @@ import Modal from '../../components/Modal'
 import Slider from '../../components/Slider'
 import {
     getAiringTodaySeries,
-    getSeries,
     getPopularSeries,
+    getSeries,
     getTopSeries
 } from '../../services/getData'
 import { getImages } from '../../utils/getimages'
@@ -23,32 +23,32 @@ import {
 
 
 function Series() {
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
     const [series, setSeries] = useState();
     const [airingTodaySeries, setAiringTodaySeries] = useState();
-    const [popularSeries, setPopularSeries] = useState();
     const [topSeries, setTopSeries] = useState();
-    
+    const [popularSeries, setPopularSeries] = useState();
+
     const navigate = useNavigate()
 
     useEffect(() => {
         async function getAllData() {
             Promise.all([
                 getSeries(),
-                getAiringTodaySeries(),
                 getPopularSeries(),
+                getAiringTodaySeries(),
                 getTopSeries()
             ])
                 .then(([
-                    series, 
+                    series,
                     airingTodaySeries,
-                    popularSeries ,
-                    topSeries
+                    topSeries,
+                    popularSeries
                 ]) => {
                     setSeries(series);
                     setAiringTodaySeries(airingTodaySeries);
-                    setPopularSeries(popularSeries);
                     setTopSeries(topSeries);
+                    setPopularSeries(popularSeries);
                 })
                 .catch((err) => console.error(err));
         }
