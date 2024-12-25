@@ -1,4 +1,5 @@
 
+
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -7,8 +8,8 @@ import Modal from '../../components/Modal'
 import Slider from '../../components/Slider'
 import {
     getAiringTodaySeries,
-    getPopularSeries,
     getSeries,
+    getPopularSeries,
     getTopSeries
 } from '../../services/getData'
 import { getImages } from '../../utils/getimages'
@@ -25,24 +26,29 @@ function Series() {
     const [showModal, setShowModal] = useState(false)
     const [series, setSeries] = useState();
     const [airingTodaySeries, setAiringTodaySeries] = useState();
-    const [topSeries, setTopSeries] = useState();
     const [popularSeries, setPopularSeries] = useState();
-
+    const [topSeries, setTopSeries] = useState();
+    
     const navigate = useNavigate()
 
     useEffect(() => {
         async function getAllData() {
             Promise.all([
                 getSeries(),
-                getPopularSeries(),
                 getAiringTodaySeries(),
+                getPopularSeries(),
                 getTopSeries()
             ])
-                .then(([series, airingTodaySeries, topSeries, popularSeries]) => {
+                .then(([
+                    series, 
+                    airingTodaySeries,
+                    popularSeries ,
+                    topSeries
+                ]) => {
                     setSeries(series);
                     setAiringTodaySeries(airingTodaySeries);
-                    setTopSeries(topSeries);
                     setPopularSeries(popularSeries);
+                    setTopSeries(topSeries);
                 })
                 .catch((err) => console.error(err));
         }
