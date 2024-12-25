@@ -26,7 +26,7 @@ const slideInBckTop = keyframes`
 export const Background = styled.div`
   background-image: url( ${(props) => props.img} );
   
-  height: 97vh;
+  height: 100vh;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -41,7 +41,7 @@ export const Background = styled.div`
     left: 0;
     width: 100%;
     height: 100px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
   }
   &::after {
     content: '';
@@ -49,7 +49,7 @@ export const Background = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 500px;
     background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
   }
 
