@@ -106,35 +106,5 @@ Este projeto foi desenvolvido usando as seguintes tecnologias e ferramentas:
 
 - TMDB: <a href="https://developer.themoviedb.org/docs/getting-started" target="_blank">The Movie DataBase</a>
 
-# Começando 🤖
 
-Para clonar e executar este aplicativo, você precisará de Git e Node.js (que vem com npm) instalado em seu computador. Na sua linha de comando:
-
-## Clone este repositório
-
-```bash
-$ git clone <https://github.com/victorSmenezes/Dev-Movies.git>
-
-# Acesse a pasta do projeto
-$ cd # nome da pasta
-
-# Instale as dependências
-$ npm install
-# or
-$ yarn add install
-
-```
-
-## Execute o projeto 📎
-
-```bash
-$ npm run dev
-# or
-$ yarn dev
-# or
-$ pnpm dev
-
-```
-
-Abra [http://localhost:5173](http://localhost:5173/) no seu navegador e veja o projeto rodando.
 
