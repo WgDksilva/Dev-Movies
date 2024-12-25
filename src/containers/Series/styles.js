@@ -49,10 +49,6 @@ export const Background = styled.div`
     width: 100%;
     height: 500px;
     background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-
-    @media (max-width: 430px) {
-      bottom: 185px;
-    }
   }
 `;
 
@@ -66,8 +62,7 @@ export const Container = styled.div`
   @media (max-width: 430px) {
     flex-direction: column-reverse;
     width: 98%;
-    justify-content: center;
-    margin-top: 50%;
+    justify-content: end;
   }
 `;
 
@@ -84,7 +79,7 @@ export const Info = styled.div`
     animation: ${slideInBckTop} 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
     @media (max-width: 430px) {
-      font-size: 2.5rem;
+      font-size: 3rem;
       text-align: center;
     }
   }
