@@ -13,7 +13,7 @@
 
 # 🔖 Deploy
 
-> [Dev Movies](http://localhost:5174/)
+> [Dev Movies](https://wgdksilva.github.io/Dev-Movies/)
 > 
 
 # 🎥 Section's
